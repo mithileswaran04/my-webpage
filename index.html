@@ -86,3 +86,85 @@ function login() {
 
 </body>
 </html>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home Page</title>
+
+<style>
+body {
+    font-family: Arial;
+    background: #eef2f3;
+    margin: 0;
+}
+
+header {
+    background: #4CAF50;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+.container {
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 8px;
+    box-shadow: 0 0 5px #aaa;
+}
+
+button {
+    padding: 10px 20px;
+    background: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h2>Welcome Admin 👋</h2>
+</header>
+
+<div class="container">
+
+<div class="card">
+<h3>Dashboard</h3>
+<p>You have successfully logged in.</p>
+</div>
+
+<div class="card">
+<h3>Your Services</h3>
+<ul>
+<li>Network Monitoring</li>
+<li>Server Management</li>
+<li>User Support</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Profile</h3>
+<p>Name: Admin</p>
+<p>Email: admin@test.com</p>
+</div>
+
+<button onclick="logout()">Logout</button>
+
+</div>
+
+<script>
+function logout() {
+    window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>
