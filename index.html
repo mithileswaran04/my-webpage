@@ -76,15 +76,8 @@ function login() {
     // hard-coded credentials
     if(user === "admin" && pass === "12345") {
         alert("Login Successful!");
-        window.location.href = "home.html"; // optional redirect
-    }
-    else {
-        document.getElementById("msg").innerHTML = "Invalid Username or Password!";
-    }
-}
-</script>
-
-</body>
+        window.location.href = "home.html"; 
+        </body>
 </html>
 <!DOCTYPE html>
 <html>
@@ -167,4 +160,12 @@ function logout() {
 </script>
 
 </body>
-</html>
+</html>// optional redirect
+    }
+    else {
+        document.getElementById("msg").innerHTML = "Invalid Username or Password!";
+    }
+}
+</script>
+
+
