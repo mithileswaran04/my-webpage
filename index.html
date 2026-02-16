@@ -1,28 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My First Web Page</title>
-</head>
-<body>
-    <h1>Hello World 🌍</h1>
-    <h2>My website is hosted using GitHub Pages</h2>
-    <p>Created by Mithileswaran</p>
-</body>
-</html>
-<!DOCTYPE html>
-<html>
-<head>
-<title>Simple Login</title>
+<title>Login Dashboard</title>
 
 <style>
 body {
     font-family: Arial;
     background: #f2f2f2;
+    margin: 0;
 }
 
 .login-box {
     width: 300px;
-    margin: 100px auto;
+    margin: 120px auto;
     padding: 25px;
     background: white;
     border-radius: 8px;
@@ -44,51 +34,8 @@ button {
     cursor: pointer;
 }
 
-button:hover {
-    background: #45a049;
-}
-
-h2 {
-    text-align: center;
-}
-</style>
-</head>
-
-<body>
-
-<div class="login-box">
-<h2>Login</h2>
-
-<input type="text" id="username" placeholder="Username">
-<input type="password" id="password" placeholder="Password">
-
-<button onclick="login()">Login</button>
-
-<p id="msg"></p>
-</div>
-
-<script>
-function login() {
-
-    var user = document.getElementById("username").value;
-    var pass = document.getElementById("password").value;
-
-    // hard-coded credentials
-    if(user === "admin" && pass === "12345") {
-        alert("Login Successful!");
-        window.location.href = "home.html"; 
-        </body>
-</html>
-<!DOCTYPE html>
-<html>
-<head>
-<title>Home Page</title>
-
-<style>
-body {
-    font-family: Arial;
-    background: #eef2f3;
-    margin: 0;
+.dashboard {
+    display: none;
 }
 
 header {
@@ -110,18 +57,31 @@ header {
     box-shadow: 0 0 5px #aaa;
 }
 
-button {
-    padding: 10px 20px;
+.logout {
     background: red;
-    color: white;
-    border: none;
-    cursor: pointer;
 }
 </style>
 
 </head>
 
 <body>
+
+<!-- LOGIN SECTION -->
+<div class="login-box" id="loginBox">
+
+<h2 align="center">Login</h2>
+
+<input type="text" id="username" placeholder="Username">
+<input type="password" id="password" placeholder="Password">
+
+<button onclick="login()">Login</button>
+
+<p id="msg" style="color:red"></p>
+
+</div>
+
+<!-- DASHBOARD SECTION -->
+<div class="dashboard" id="dashboard">
 
 <header>
 <h2>Welcome Admin 👋</h2>
@@ -131,11 +91,11 @@ button {
 
 <div class="card">
 <h3>Dashboard</h3>
-<p>You have successfully logged in.</p>
+<p>Login successful!</p>
 </div>
 
 <div class="card">
-<h3>Your Services</h3>
+<h3>Services</h3>
 <ul>
 <li>Network Monitoring</li>
 <li>Server Management</li>
@@ -149,23 +109,35 @@ button {
 <p>Email: admin@test.com</p>
 </div>
 
-<button onclick="logout()">Logout</button>
+<button class="logout" onclick="logout()">Logout</button>
+
+</div>
 
 </div>
 
 <script>
-function logout() {
-    window.location.href = "login.html";
-}
-</script>
 
-</body>
-</html>// optional redirect
-    }
-    else {
+function login() {
+
+    var user = document.getElementById("username").value;
+    var pass = document.getElementById("password").value;
+
+    if(user === "admin" && pass === "12345") {
+
+        document.getElementById("loginBox").style.display = "none";
+        document.getElementById("dashboard").style.display = "block";
+
+    } else {
         document.getElementById("msg").innerHTML = "Invalid Username or Password!";
     }
 }
+
+function logout() {
+    document.getElementById("dashboard").style.display = "none";
+    document.getElementById("loginBox").style.display = "block";
+}
+
 </script>
 
-
+</body>
+</html>
